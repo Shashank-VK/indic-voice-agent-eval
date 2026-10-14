@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest / Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local cache & data (keeps repo ultra lean, audio generated dynamically by run_eval.py)
+data/audio/*.wav
+*.log
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Prompt files
+agy_prompt.txt

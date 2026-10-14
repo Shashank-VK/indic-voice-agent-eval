@@ -1,0 +1,28 @@
+pipeline:
+  whisper_model: "tiny"
+  whisper_device: "cpu"
+  compute_type: "int8"
+  tts_lang: "hi"
+  sample_rate: 16000
+  noise_snr_db: 15.0
+  audio_dir: "data/audio"
+
+pricing:
+  local_compute_per_sec: 0.00000000  # Local compute assumed $0/hr for measurement
+  cloud_reference_provider: "AWS Transcribe"
+  cloud_reference_rate_per_sec: 0.00040000  # $0.024 / minute published rate ($0.0004 / second)
+  calls_unit: 1000
+
+thresholds:
+  max_wer_overall: 0.75
+  max_wer_clean: 0.75
+  max_wer_code_mixing: 0.70
+  max_wer_regional_accent: 0.80
+  max_wer_background_noise: 0.85
+  max_p95_latency_ms: 10000.0  # 10s CPU p95 threshold for local Whisper tiny on CPU
+
+failure_modes:
+  - clean
+  - code_mixing
+  - regional_accent
+  - background_noise
