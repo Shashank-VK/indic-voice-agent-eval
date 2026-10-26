@@ -145,3 +145,12 @@ This project builds directly on prior voice and evaluation engineering patterns:
 ## 8. License
 
 MIT License. See [LICENSE](LICENSE) for details.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    Audio[40 utterances] --> STT[Speech-to-text]
+    STT --> Metrics[WER + latency benchmarks]
+```
+
